@@ -21,7 +21,7 @@ Plugin 'tpope/vim-sleuth.git'
 Bundle 'Yggdroot/indentLine'
 
 " Golden ratio multiwindow
-Bundle 'roman/golden-ratio' 
+Bundle 'roman/golden-ratio'
 
 " Status line decorations
 Plugin 'vim-airline/vim-airline'
@@ -45,7 +45,7 @@ filetype plugin on
 set laststatus=2
 
 " Disable mouse click to go to position
-set mouse-=a 
+set mouse-=a
 
 " Don't let autocomplete affect usual typing habits
 set completeopt=menuone,preview,noinsert
@@ -73,11 +73,11 @@ set ffs=unix,dos,mac
 set fencs=utf-8,cp1251,koi8-r,ucs-2,cp866
 
 " Solarized configuration
-set t_Co=256 
+set t_Co=256
 set background=dark
 colorscheme solarized
 
-" trailing whitespaces highlight 
+" trailing whitespaces highlight
 highlight ExtraWhitespace ctermbg=darkgreen guibg=darkgreen
 autocmd Syntax * syn match ExtraWhitespace /\s\+$/
 autocmd FileType c,cpp,java,php,py,pl,sh,h,hpp,js,javascript,html,css,scala autocmd BufWritePre <buffer> :%s/\s\+$//e
@@ -99,7 +99,7 @@ let g:indentLine_char = '⏐'
 " insert new line by <C-J>
 nnoremap <C-J> i<CR><Esc>
 
-" Shortcut for jj 
+" Shortcut for jj
 inoremap jj <Esc>l
 
 " Highlight all instances of word under cursor, when idle.
@@ -128,9 +128,17 @@ endfunction
 " call AutoHighlightToggle()
 nnoremap <localleader>z :call AutoHighlightToggle()<CR>
 
+"split navigations
+nnoremap <C-J> <C-W><C-J>
+nnoremap <C-K> <C-W><C-K>
+nnoremap <C-L> <C-W><C-L>
+nnoremap <C-H> <C-W><C-H>
+
+
 " Airline
 let g:airline_powerline_fonts = 1
-" let g:airline_theme='solarized'
+let g:airline_theme='solarized'
+let g:airline#extensions#tabline#enabled = 1
 
 " jedi-vim
 let g:jedi#show_call_signatures = "0"

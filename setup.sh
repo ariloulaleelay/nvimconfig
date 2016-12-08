@@ -10,3 +10,7 @@ DIR="$( cd -P "$( dirname "$SOURCE" )" && pwd )"
 
 mkdir -p $DIR/bundle
 cd $DIR/bundle && git clone https://github.com/VundleVim/Vundle.vim.git
+
+# TODO
+# install fonts
+# https://github.com/powerline/fonts
