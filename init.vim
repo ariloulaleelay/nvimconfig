@@ -26,7 +26,10 @@ Bundle 'roman/golden-ratio'
 " Status line decorations
 Plugin 'vim-airline/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
+
+" Git
 Plugin 'airblade/vim-gitgutter'
+Plugin 'tpope/vim-fugitive'
 
 
 " --- Python ---
