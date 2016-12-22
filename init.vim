@@ -31,11 +31,9 @@ Plugin 'vim-airline/vim-airline-themes'
 Plugin 'airblade/vim-gitgutter'
 Plugin 'tpope/vim-fugitive'
 
-
 " --- Python ---
 Plugin 'klen/python-mode'         " Python mode (docs, refactor, lints, highlighting, run and ipdb and more)
 Plugin 'davidhalter/jedi-vim'     " Jedi-vim autocomplete plugin
-Plugin 'nvie/vim-flake8' " PEP8 checks
 
 " Some exotics
 Plugin 'edkolev/tmuxline.vim'
@@ -71,7 +69,6 @@ set listchars=tab:··
 set list
 
 " Порядок применения кодировок и формата файлов
-
 set ffs=unix,dos,mac
 set fencs=utf-8,cp1251,koi8-r,ucs-2,cp866
 
@@ -86,29 +83,53 @@ autocmd Syntax * syn match ExtraWhitespace /\s\+$/
 autocmd FileType c,cpp,java,php,py,pl,sh,h,hpp,js,javascript,html,css,scala autocmd BufWritePre <buffer> :%s/\s\+$//e
 
 " klen/python-mode configuration
-let g:pymode_options_max_line_length = 1000
+let g:pymode = 1
+let g:pymode_options = 1
 let g:pymode_options_colorcolumn = 0
 let g:pymode_folding = 0
-let g:pymode_lint_options_mccabe = { 'complexity': 120 }
-" rope hang workaround https://github.com/klen/python-mode/issues/209
-let g:pymode_rope_lookup_project = 0
-" https://github.com/klen/python-mode/issues/525
+let g:pymode_indent = 1
+let g:pymode_doc = 1
+let g:pymode_virtualenv = 1
+
+" let g:pymode_debug = 0
+let g:pymode_lint = 1
+let g:pymode_lint_checkers = ['pylint', 'pep8', 'pyflakes']
+let g:pymode_lint_on_write = 1
+let g:pymode_lint_on_fly = 0
+let g:pymode_lint_message = 1
+let g:pymode_lint_ignore = 'E501,E0611,W0201,line-too-long,missing-docstring,abstract-method,invalid-name,no-self-use,fixme,too-many-arguments,no-member,too-few-public-methods,star-args'
+let g:pymode_lint_cwindow = 1 
+let g:pymode_lint_signs = 1
+let g:pymode_lint_options_pylint = { 'max-branches': 20 }
+
+let g:pymode_rope = 0 
+let g:pymode_rope_lookup_project = 1
+let g:pymode_rope_regenerate_on_write = 0
 let g:pymode_rope_autoimport = 0
+let g:pymode_rope_completion = 1
+let g:pymode_rope_complete_on_dot = 1
+let g:pymode_rope_goto_definition_cmd = 'vnew'
+let g:pymode_rope_organize_imports_bind = '<localleader>ro'
+
+let g:pymode_syntax = 1
+let g:pymode_syntax_slow_sync = 1
+let g:pymode_syntax_all = 1
 
 " Yggdroot/indentLine configuration
 let g:indentLine_enabled = 1
 let g:indentLine_char = '⏐'
 
-" insert new line by <C-J>
-nnoremap <C-J> i<CR><Esc>
+" Airline
+let g:airline_powerline_fonts = 1
+let g:airline_theme='solarized'
+let g:airline#extensions#tabline#enabled = 1
 
-" Shortcut for jj
-inoremap jj <Esc>l
+" jedi-vim
+let g:jedi#show_call_signatures = 0
 
 " Highlight all instances of word under cursor, when idle.
 " Useful when studying strange source code.
 " Type z/ to toggle highlighting on/off.
-nnoremap z/ :if AutoHighlightToggle()<Bar>set hls<Bar>endif<CR>
 function! AutoHighlightToggle()
   let @/ = ''
   if exists('#auto_highlight')
@@ -128,24 +149,18 @@ function! AutoHighlightToggle()
   endif
 endfunction
 
-" call AutoHighlightToggle()
-nnoremap <localleader>z :call AutoHighlightToggle()<CR>
+" Let plugins show effects after 500ms, not 4s
+set updatetime=100
+set number
+
+nnoremap <localleader>l :PymodeLint<CR>
+nnoremap <localleader>z :set hls<CR>call AutoHighlightToggle()<CR>
+
+nnoremap <C-J> i<CR><Esc>
+inoremap jj <Esc>l
 
 "split navigations
 nnoremap <C-J> <C-W><C-J>
 nnoremap <C-K> <C-W><C-K>
 nnoremap <C-L> <C-W><C-L>
 nnoremap <C-H> <C-W><C-H>
-
-
-" Airline
-let g:airline_powerline_fonts = 1
-let g:airline_theme='solarized'
-let g:airline#extensions#tabline#enabled = 1
-
-" jedi-vim
-let g:jedi#show_call_signatures = "0"
-
-" Let plugins show effects after 500ms, not 4s
-set updatetime=100
-set number
