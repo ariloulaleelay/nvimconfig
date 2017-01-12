@@ -35,6 +35,9 @@ Plugin 'tpope/vim-fugitive'
 Plugin 'klen/python-mode'         " Python mode (docs, refactor, lints, highlighting, run and ipdb and more)
 Plugin 'davidhalter/jedi-vim'     " Jedi-vim autocomplete plugin
 
+" JSON
+Plugin 'elzr/vim-json'
+
 " Some exotics
 Plugin 'edkolev/tmuxline.vim'
 
@@ -97,7 +100,7 @@ let g:pymode_lint_checkers = ['pylint', 'pep8', 'pyflakes']
 let g:pymode_lint_on_write = 1
 let g:pymode_lint_on_fly = 0
 let g:pymode_lint_message = 1
-let g:pymode_lint_ignore = 'E501,E0611,W0201,line-too-long,missing-docstring,abstract-method,invalid-name,no-self-use,fixme,too-many-arguments,no-member,too-few-public-methods,star-args'
+let g:pymode_lint_ignore = 'E265,E501,E0611,W0201,line-too-long,missing-docstring,abstract-method,invalid-name,no-self-use,fixme,too-many-arguments,no-member,too-few-public-methods,star-args'
 let g:pymode_lint_cwindow = 1 
 let g:pymode_lint_signs = 1
 let g:pymode_lint_options_pylint = { 'max-branches': 20 }
