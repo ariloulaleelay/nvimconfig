@@ -38,6 +38,9 @@ Plugin 'davidhalter/jedi-vim'     " Jedi-vim autocomplete plugin
 " JSON
 Plugin 'elzr/vim-json'
 
+" OpenSCAD
+Plugin 'sirtaj/vim-openscad'
+
 " Some exotics
 Plugin 'edkolev/tmuxline.vim'
 
