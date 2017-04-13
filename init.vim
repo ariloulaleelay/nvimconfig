@@ -16,6 +16,10 @@ Plugin 'kalafut/vim-taskjuggler'
 Plugin 'mitsuhiko/vim-jinja'
 Bundle 'altercation/vim-colors-solarized.git'
 
+" Markdown
+Plugin 'godlygeek/tabular'
+Plugin 'plasticboy/vim-markdown'
+
 " Tab detection
 Plugin 'tpope/vim-sleuth.git'
 Bundle 'Yggdroot/indentLine'
