@@ -14,6 +14,7 @@ Plugin 'GEverding/vim-hocon'
 Plugin 'aklt/plantuml-syntax'
 Plugin 'kalafut/vim-taskjuggler'
 Plugin 'mitsuhiko/vim-jinja'
+Plugin 'martinda/Jenkinsfile-vim-syntax'
 Bundle 'altercation/vim-colors-solarized.git'
 
 " Markdown
@@ -84,7 +85,7 @@ set fencs=utf-8,cp1251,koi8-r,ucs-2,cp866
 
 " Solarized configuration
 set t_Co=256
-" set background=dark
+set background=dark
 colorscheme solarized
 
 " trailing whitespaces highlight
@@ -108,7 +109,7 @@ let g:pymode_lint_checkers = ['pylint', 'pep8', 'pyflakes']
 let g:pymode_lint_on_write = 1
 let g:pymode_lint_on_fly = 0
 let g:pymode_lint_message = 1
-let g:pymode_lint_ignore = 'R0911,W0101,W0702,R0914,E265,E501,E0611,W0201,line-too-long,missing-docstring,abstract-method,invalid-name,no-self-use,fixme,too-many-arguments,no-member,too-few-public-methods,star-args'
+let g:pymode_lint_ignore = 'C901,R0911,W0101,W0702,R0914,E265,E501,E0611,W0201,line-too-long,missing-docstring,abstract-method,invalid-name,no-self-use,fixme,too-many-arguments,no-member,too-few-public-methods,star-args'
 let g:pymode_lint_cwindow = 1 
 let g:pymode_lint_signs = 1
 let g:pymode_lint_options_pylint = { 'max-branches': 20 }
@@ -159,6 +160,12 @@ function! AutoHighlightToggle()
     return 1
   endif
 endfunction
+
+" Tabularize
+nnoremap <localleader>a= :Tabularize /=<CR>
+vnoremap <localleader>a= :Tabularize /=<CR>
+nnoremap <localleader>a: :Tabularize /:\zs<CR>
+vnoremap <localleader>a: :Tabularize /:\zs<CR>
 
 " Let plugins show effects after 500ms, not 4s
 set updatetime=100
