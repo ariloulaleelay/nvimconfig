@@ -144,6 +144,7 @@ let g:jedi#show_call_signatures = 0
 " golden-ratio
 let g:golden_ratio_exclude_nonmodifiable = 1
 
+
 " Highlight all instances of word under cursor, when idle.
 " Useful when studying strange source code.
 " Type z/ to toggle highlighting on/off.
@@ -175,6 +176,7 @@ vnoremap <localleader>a: :Tabularize /:\zs<CR>
 " Let plugins show effects after 500ms, not 4s
 set updatetime=100
 set number
+set colorcolumn=80
 
 nnoremap <localleader>l :PymodeLint<CR>
 nnoremap <localleader>z :set hls<CR>call AutoHighlightToggle()<CR>
