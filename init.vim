@@ -15,7 +15,9 @@ Plugin 'aklt/plantuml-syntax'
 Plugin 'kalafut/vim-taskjuggler'
 Plugin 'mitsuhiko/vim-jinja'
 Plugin 'martinda/Jenkinsfile-vim-syntax'
+Plugin 'posva/vim-vue.git'
 Bundle 'altercation/vim-colors-solarized.git'
+
 
 " Markdown
 Plugin 'godlygeek/tabular'
@@ -138,6 +140,9 @@ let g:airline#extensions#tabline#enabled = 1
 
 " jedi-vim
 let g:jedi#show_call_signatures = 0
+
+" golden-ratio
+let g:golden_ratio_exclude_nonmodifiable = 1
 
 " Highlight all instances of word under cursor, when idle.
 " Useful when studying strange source code.

@@ -1,4 +1,10 @@
 let g:netrw_dirhistmax  =10
-let g:netrw_dirhist_cnt =2
+let g:netrw_dirhist_cnt =8
 let g:netrw_dirhist_1='/home/pro/proj/models/prodelta/prodelta.egg-info'
 let g:netrw_dirhist_2='/home/pro/proj/models/prodelta/prodelta'
+let g:netrw_dirhist_3='/home/pro/proj/guru/personal_growth/src/personal_growth'
+let g:netrw_dirhist_4='/home/pro/proj/guru/personal_growth/src/personal_growth/management/commands'
+let g:netrw_dirhist_5='/home/pro/proj/universe/facerouter/example_plugins'
+let g:netrw_dirhist_6='/home/pro/proj/universe/tigre_prototype/tigre_prototype'
+let g:netrw_dirhist_7='/home/pro/proj/universe/videomanager-api/src/job'
+let g:netrw_dirhist_8='/home/pro/proj/universe/beast/websocket'
