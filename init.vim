@@ -17,6 +17,8 @@ Plugin 'mitsuhiko/vim-jinja'
 Plugin 'martinda/Jenkinsfile-vim-syntax'
 Plugin 'posva/vim-vue.git'
 Bundle 'altercation/vim-colors-solarized.git'
+Bundle 'crusoexia/vim-monokai'
+Bundle 'morhetz/gruvbox'
 
 
 " Markdown
@@ -88,7 +90,9 @@ set fencs=utf-8,cp1251,koi8-r,ucs-2,cp866
 " Solarized configuration
 set t_Co=256
 set background=dark
-colorscheme solarized
+" colorscheme solarized
+" colorscheme monokai
+colorscheme gruvbox
 
 " trailing whitespaces highlight
 highlight ExtraWhitespace ctermbg=darkgreen guibg=darkgreen
@@ -176,7 +180,7 @@ vnoremap <localleader>a: :Tabularize /:\zs<CR>
 " Let plugins show effects after 500ms, not 4s
 set updatetime=100
 set number
-set colorcolumn=80
+set colorcolumn=120
 
 nnoremap <localleader>l :PymodeLint<CR>
 nnoremap <localleader>z :set hls<CR>call AutoHighlightToggle()<CR>

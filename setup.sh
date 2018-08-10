@@ -22,3 +22,6 @@ cd fonts
 # clean-up a bit
 cd ..
 rm -rf fonts
+
+# terminal themes
+# wget -O gogh https://git.io/vQgMr && chmod +x gogh && ./gogh
